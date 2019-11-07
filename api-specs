@@ -1,0 +1,13 @@
+/api/autofill - POST
+    - host
+    - field
+        - id
+        - name
+        - class
+
+/api/autofill?for=<base64encode(HOST)> - GET
+    - data[Object] (sorted by accuracy)
+        - id
+        - name
+        - class
+        - accuracy
