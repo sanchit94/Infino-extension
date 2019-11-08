@@ -3,7 +3,7 @@
     - field
         - id
         - name
-        - class
+        
 
 /api/autofill?for=<base64encode(HOST)> - GET
     - data[Object] (sorted by accuracy)
