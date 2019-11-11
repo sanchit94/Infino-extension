@@ -20,6 +20,8 @@ function changeValueForSelect( field, value ) {
             Object.getOwnPropertyDescriptor( window.HTMLSelectElement.prototype, 'value' ).set;
   console.log(_nativeElementSet);
   _nativeElementSet.call( field, value );
+  field.selectedIndex = value;
+  
   field.dispatchEvent( new Event( 'change', { bubbles: true } ) );
         field.dispatchEvent( new Event( 'focus', { bubbles: true } ) );
         field.dispatchEvent( new Event( 'keydown', { bubbles: true } ) );
@@ -63,19 +65,21 @@ function copyTextToClipboard(text) {
       .then(res => res.json())
       .then(res => {
         console.log(res);
-        const { name: field, cNumber } = res;
+        const { name: field, cNumber, select, expiry } = res;
         const selector = 'input[name="' + field + '"]';
         let ccFields = [ ...document.querySelectorAll(selector) ];
-        let monthField = document.querySelector('select[name="ppw-expirationDate_month"');
-        console.log(monthField);
-
+        let monthField = document.querySelector('select[name="' + select + '"');
         
         if (!ccFields.length) {
             ccFields = [ ...document.querySelectorAll(`#${ field }`) ];
         }
 
+        if (!monthField) {
+          monthField = document.querySelector(`select#${select}`);
+        }
+
         ccFields.forEach( changeValue( cNumber ) );
-        changeValueForSelect(monthField, 5);
+        changeValueForSelect(monthField, Number(expiry));
       })
 
     } else {
