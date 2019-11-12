@@ -3,8 +3,13 @@
   <head>
     <link rel="stylesheet" href="bulma.css">
     <style>
-      .main-container {
+      #main-container {
         width: 450px;
+      }
+
+      .tabs.is-toggle li.is-active a {
+        background-color: hsl(171, 100%, 41%);
+        border-color: hsl(171, 100%, 41%);
       }
 
       .card-header {
@@ -64,25 +69,29 @@
       }
     </style>
     <link href="fontawesome/css/all.css" rel="stylesheet"> 
+    <link href="otp-form.css" rel="stylesheet">
   </head>
   <body>
     
 
-    <div class="main-container">
+    <div id="main-container">
         <div class="card">
           <header class="card-header">
               <div class="tabs is-toggle">
                 <ul>
-                  <li class="is-active">
+                  <li to="home-screen" class="is-active">
                     <a>
-                      <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span>
                       <span>Home</span>
                     </a>
                   </li>
-                  <li>
+                  <li to="reward-screen">
                     <a>
-                      <span class="icon is-small"><i class="fas fa-gift" aria-hidden="true"></i></span>
                       <span>Rewards</span>
+                    </a>
+                  </li>
+                  <li to="login-screen">
+                    <a>
+                      <span>Login</span>
                     </a>
                   </li>
                 </ul>
@@ -92,7 +101,21 @@
               </div>
           </header>
           <div class="card-content">
-            <div id="home-screen" class="is-hidden">
+            <div id="login-screen" class="main-screen is-hidden">
+              <div class="content">
+                <h5>Enter OTP to login</h5>
+                <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                    <input type="text" id="digit-1" name="digit-1" data-next="digit-2" />
+                    <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+                    <input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+                    <span class="splitter">&ndash;</span>
+                    <input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+                    <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
+                    <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" />
+                  </form>
+              </div>
+            </div>
+            <div id="home-screen" class="main-screen">
               <div class="content">
                 Welcome
                 <br>
@@ -149,7 +172,7 @@
                   </table>
               </div>
             </div>
-            <div id="reward-screen" class="">
+            <div class="main-screen is-hidden" id="reward-screen">
               <table class="table">
                 <tbody>
                   <tr>
@@ -247,9 +270,10 @@
           
         </div>
     </div>
+    <script
+    src="jquery.js"></script>
 
-
-    
+    <script src="otp-form.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>

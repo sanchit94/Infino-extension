@@ -1,9 +1,41 @@
-let changeColor = document.getElementById('changeColor');
+const tabSelection = [...document.querySelectorAll('.tabs.is-toggle li')];
 
-chrome.storage.sync.get('color', function(data) {
-    changeColor.style.backgroundColor = data.color;
-    changeColor.setAttribute('value', data.color);
+const navigator = (id) => {
+  const screens = [...document.querySelectorAll('.main-screen')];
+  const currentScreen = document.getElementById(id);
+  screens.forEach(elem => {
+    elem.classList.add('is-hidden');
+  });
+
+  currentScreen.classList.remove('is-hidden');
+}
+
+tabSelection.map(elem => {
+  elem.addEventListener('click', () => {
+    console.log(elem.classList);
+    const isActive = [...elem.classList].find((element) => {
+      return element === 'is-active';
+    });
+    if (isActive) {
+      return;
+    } else {
+
+      tabSelection.forEach(element => {
+        element.classList.remove('is-active');
+      })
+
+      elem.classList.add('is-active');      
+    }
+  })
 });
+
+tabSelection.map(elem => {
+  elem.addEventListener('click', () => {
+    const navigateTo = elem.getAttribute('to');
+    console.log('Clicked', navigateTo);
+    navigator(navigateTo);
+  })
+})
 
 changeColor.onclick = function(element) {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {

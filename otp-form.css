@@ -1,0 +1,26 @@
+.digit-group input {
+    width: 30px;
+    height: 50px;
+    border: none;
+    background-color: hsl(171, 100%, 41%);
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    color: white;
+    margin: 0 2px;
+}
+	
+
+.digit-group .splitter {
+    padding: 0 5px;
+    color: white;
+    font-size: 24px;
+}
+
+.prompt {
+	margin-bottom: 20px;
+	font-size: 20px;
+	color: white;
+}
