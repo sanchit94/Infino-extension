@@ -1,49 +1,142 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="bulma.css">
     <style>
       .main-container {
         width: 450px;
       }
+
+      .card-header {
+        padding: 1.5em;
+      }
+
+      .tabs.is-toggle {
+        margin-bottom: 0;
+      }
+
+      .tabs li.is-active a {
+        border-bottom-color: hsl(171, 100%, 41%);
+        color: hsl(171, 100%, 41%);
+      }
+
+      .dp-block {
+        margin-left: auto;
+      }
+
+      .icon {
+        border-radius: 5em;
+        padding: 1em;
+      }
+
+      .icon.is-red {
+        background-color: #FFEEDC;
+      }
+
+      .icon.is-light {
+        background-color: #E7F4FF;
+      }
+
+      .text-red {
+        color: #F77C12;
+      }
+
+      .text-blue {
+        color: #00A6B7;
+      }
     </style>
+    <link href="fontawesome/css/all.css" rel="stylesheet"> 
   </head>
   <body>
     
 
     <div class="main-container">
         <div class="card">
-            <div class="card-header">
-                <div class="container">
-                  <div class="row">
-                      <div class="col-9">
-                          <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-secondary">Left</button>
-                              <button type="button" class="btn btn-secondary">Middle</button>
-                            </div>
-                      </div>
-                      <div class="col-3">
-                        <img src="DP.png" alt="Display Picture" width="64">
-                      </div>
-                  </div>
-                </div>
-            </div>
-            <div class="card-body">
-              <div class="container">
-                <div class="row">
-                  <h5 class="card-title">Welcome</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+          <header class="card-header">
+              <div class="tabs is-toggle">
+                <ul>
+                  <li class="is-active">
+                    <a>
+                      <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span>
+                      <span>Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="icon is-small"><i class="fas fa-gift" aria-hidden="true"></i></span>
+                      <span>Rewards</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
+              <div class="dp-block">
+                <img src="DP.png" alt="Display Picture" width="48">
+              </div>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              Welcome
+              <br>
+              <b>Sanchit Sharma</b>
+              <br>
+              <br>
+              You have added <b>12</b> finances to Infino.
+            </div>
+            <div>
+                <div class="tabs is-medium">
+                  <ul>
+                    <li class="is-active"><a>Updates</a></li>
+                  </ul>
+                </div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="icon is-red">
+                          <i class="far fa-bell text-red"></i>
+                        </span>
+                        </span>
+                      </td>
+                      <td>Latest Infino news and updates.</td>
+                      <td class="has-text-grey-light">Sep 20, 2019</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="icon is-light">
+                          <i class="fas fa-exclamation text-blue"></i>
+                        </span>
+                      </td>
+                      <td>Infino web launch</td>
+                      <td class="has-text-grey-light">Sep 26, 2019</td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <span class="icon is-light">
+                              <i class="fas fa-arrow-up text-blue"></i>
+                          </span>
+                        </td>
+                        <td>Adding new features</td>
+                        <td class="has-text-grey-light">Oct 20, 2019</td>
+                      </tr>
+                      <tr>
+                          <td>
+                            <span class="icon is-light">
+                                <i class="fas fa-arrow-up text-blue"></i>
+                            </span>
+                          </td>
+                          <td>One Card, less hazzle</td>
+                          <td class="has-text-grey-light">Oct 20, 2019</td>
+                        </tr>
+                  </tbody>
+                </table>
             </div>
           </div>
+          
+        </div>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
     <script src="popup.js"></script>
   </body>
 </html>
