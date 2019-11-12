@@ -24,17 +24,35 @@
         margin-left: auto;
       }
 
+      .card-content {
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      table.table {
+        width: 100%;
+      }
+
       .icon {
         border-radius: 5em;
         padding: 1em;
       }
 
-      .icon.is-red {
-        background-color: #FFEEDC;
+      .bank-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 5em;
+        padding: 0.5em;
       }
 
-      .icon.is-light {
+      .is-red {
+        background-color: #FFEEDC;
+        text-align: center;
+      }
+
+      .is-light {
         background-color: #E7F4FF;
+        text-align: center;
       }
 
       .text-red {
@@ -70,53 +88,44 @@
                 </ul>
               </div>
               <div class="dp-block">
-                <img src="DP.png" alt="Display Picture" width="48">
+                <img src="assets/images/DP.png" alt="Display Picture" width="48">
               </div>
           </header>
           <div class="card-content">
-            <div class="content">
-              Welcome
-              <br>
-              <b>Sanchit Sharma</b>
-              <br>
-              <br>
-              You have added <b>12</b> finances to Infino.
-            </div>
-            <div>
-                <div class="tabs is-medium">
-                  <ul>
-                    <li class="is-active"><a>Updates</a></li>
-                  </ul>
-                </div>
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <span class="icon is-red">
-                          <i class="far fa-bell text-red"></i>
-                        </span>
-                        </span>
-                      </td>
-                      <td>Latest Infino news and updates.</td>
-                      <td class="has-text-grey-light">Sep 20, 2019</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="icon is-light">
-                          <i class="fas fa-exclamation text-blue"></i>
-                        </span>
-                      </td>
-                      <td>Infino web launch</td>
-                      <td class="has-text-grey-light">Sep 26, 2019</td>
-                    </tr>
-                    <tr>
+            <div id="home-screen" class="is-hidden">
+              <div class="content">
+                Welcome
+                <br>
+                <b>Sanchit Sharma</b>
+                <br>
+                <br>
+                You have added <b>12</b> finances to Infino.
+              </div>
+              <div>
+                  <div class="tabs is-medium">
+                    <ul>
+                      <li class="is-active"><a>Updates</a></li>
+                    </ul>
+                  </div>
+                  <table class="table">
+                    <tbody>
+                      <tr>
                         <td>
-                          <span class="icon is-light">
-                              <i class="fas fa-arrow-up text-blue"></i>
+                          <span class="icon is-red">
+                            <i class="far fa-bell text-red"></i>
                           </span>
                         </td>
-                        <td>Adding new features</td>
-                        <td class="has-text-grey-light">Oct 20, 2019</td>
+                        <td>Latest Infino updates and news.</td>
+                        <td class="has-text-grey-light">Sep 20</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="icon is-light">
+                            <i class="fas fa-exclamation text-blue"></i>
+                          </span>
+                        </td>
+                        <td>Infino web launch</td>
+                        <td class="has-text-grey-light">Sep 26</td>
                       </tr>
                       <tr>
                           <td>
@@ -124,11 +133,115 @@
                                 <i class="fas fa-arrow-up text-blue"></i>
                             </span>
                           </td>
-                          <td>One Card, less hazzle</td>
-                          <td class="has-text-grey-light">Oct 20, 2019</td>
+                          <td>Adding new features</td>
+                          <td class="has-text-grey-light">Oct 20</td>
                         </tr>
-                  </tbody>
-                </table>
+                        <tr>
+                            <td>
+                              <span class="icon is-light">
+                                  <i class="fas fa-arrow-up text-blue"></i>
+                              </span>
+                            </td>
+                            <td>One Card, less hazzle</td>
+                            <td class="has-text-grey-light">Oct 20</td>
+                          </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+            <div id="reward-screen" class="">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-red">
+                        <img src="assets/images/Axis-Bank-PNG-Icon-715x715@3x.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-light">
+                        <img src="assets/images/HDFC.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-light">
+                        <img src="assets/images/HDFC.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-light">
+                        <img src="assets/images/HDFC.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
           
