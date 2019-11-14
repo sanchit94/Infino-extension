@@ -2,9 +2,11 @@
 <html>
   <head>
     <link rel="stylesheet" href="bulma.css">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css" />
     <style>
       #main-container {
         width: 450px;
+        height: 500px;
       }
 
       .tabs.is-toggle li.is-active a {
@@ -31,7 +33,7 @@
 
       .card-content {
         max-height: 400px;
-        overflow-y: auto;
+        padding: 1.5rem 0.25em 0.25em 1.5em;
       }
 
       table.table {
@@ -67,6 +69,9 @@
       .text-blue {
         color: #00A6B7;
       }
+
+      .mCS-infino.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: hsl(171, 100%, 41%); }
+  .mCS-infino.mCSB_scrollTools .mCSB_draggerRail{ background-color: rgb(240, 240, 240); } 
     </style>
     <link href="fontawesome/css/all.css" rel="stylesheet"> 
     <link href="otp-form.css" rel="stylesheet">
@@ -112,6 +117,7 @@
                     <input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
                     <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
                     <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" />
+                    <button type="button" class="button" id="something">Submit</button>
                   </form>
               </div>
             </div>
@@ -160,14 +166,68 @@
                           <td class="has-text-grey-light">Oct 20</td>
                         </tr>
                         <tr>
-                            <td>
-                              <span class="icon is-light">
-                                  <i class="fas fa-arrow-up text-blue"></i>
-                              </span>
-                            </td>
-                            <td>One Card, less hazzle</td>
-                            <td class="has-text-grey-light">Oct 20</td>
-                          </tr>
+                          <td>
+                            <span class="icon is-light">
+                                <i class="fas fa-arrow-up text-blue"></i>
+                            </span>
+                          </td>
+                          <td>One Card, less hazzle</td>
+                          <td class="has-text-grey-light">Oct 20</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="icon is-light">
+                                <i class="fas fa-arrow-up text-blue"></i>
+                            </span>
+                          </td>
+                          <td>One Card, less hazzle</td>
+                          <td class="has-text-grey-light">Oct 20</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="icon is-light">
+                                <i class="fas fa-arrow-up text-blue"></i>
+                            </span>
+                          </td>
+                          <td>One Card, less hazzle</td>
+                          <td class="has-text-grey-light">Oct 20</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="icon is-light">
+                                <i class="fas fa-arrow-up text-blue"></i>
+                            </span>
+                          </td>
+                          <td>One Card, less hazzle</td>
+                          <td class="has-text-grey-light">Oct 20</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="icon is-light">
+                                <i class="fas fa-arrow-up text-blue"></i>
+                            </span>
+                          </td>
+                          <td>One Card, less hazzle</td>
+                          <td class="has-text-grey-light">Oct 20</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="icon is-light">
+                                <i class="fas fa-arrow-up text-blue"></i>
+                            </span>
+                          </td>
+                          <td>One Card, less hazzle</td>
+                          <td class="has-text-grey-light">Oct 20</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="icon is-light">
+                                <i class="fas fa-arrow-up text-blue"></i>
+                            </span>
+                          </td>
+                          <td>One Card, less hazzle</td>
+                          <td class="has-text-grey-light">Oct 20</td>
+                        </tr>
                     </tbody>
                   </table>
               </div>
@@ -263,6 +323,116 @@
                       <span class="has-text-grey-light is-size-7">Est. Reward</span>
                     </td>
                   </tr>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-red">
+                        <img src="assets/images/Axis-Bank-PNG-Icon-715x715@3x.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-red">
+                        <img src="assets/images/HDFC.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-red">
+                        <img src="assets/images/Axis-Bank-PNG-Icon-715x715@3x.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-red">
+                        <img src="assets/images/HDFC.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="bank-image is-red">
+                        <img src="assets/images/Axis-Bank-PNG-Icon-715x715@3x.png" alt="Bank Name" width="20">
+                      </div>
+                    </td>
+                    <td>
+                      <span class="bank-name">Axis Bank</span>
+                      <br>
+                      <span class="card-number-masked has-text-grey-light">********594</span>
+                    </td>
+                    <td>
+                      <span class="card-issuer">VISA</span>
+                      <br>
+                      <span class="card-type has-text-grey-light">Credit</span>
+                    </td>
+                    <td>
+                      <span class="savings-amount">&#8377; 2,500</span>
+                      <br>
+                      <span class="has-text-grey-light is-size-7">Est. Reward</span>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -270,9 +440,9 @@
           
         </div>
     </div>
-    <script
-    src="jquery.js"></script>
-
+    <script src="jquery.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/js/custom-scroll.js"></script>
     <script src="otp-form.js"></script>
     <script src="popup.js"></script>
   </body>
