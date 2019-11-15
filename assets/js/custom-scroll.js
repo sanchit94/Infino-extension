@@ -1,6 +1,6 @@
 (function($){
           $(window).on("load",function(){
-              $(".card-content").mCustomScrollbar({
+              $(".custom-scroll").mCustomScrollbar({
                 theme: 'infino'
               });
           });

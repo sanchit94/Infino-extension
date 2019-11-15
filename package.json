@@ -1,0 +1,15 @@
+{
+  "name": "infino-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension",
+  "main": "autofill.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sanchit Sharma <sanchit@getinfino.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.4.0",
+    "lit-html": "^1.1.2"
+  }
+}

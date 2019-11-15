@@ -1,5 +1,6 @@
-const tabSelection = [...document.querySelectorAll('.tabs.is-toggle li')];
-const doSomething = document.getElementById('something');
+$(function() {
+
+  const tabSelection = [...document.querySelectorAll('.tabs.is-toggle li')];
 
 const navigator = (id) => {
   const screens = [...document.querySelectorAll('.main-screen')];
@@ -60,11 +61,16 @@ tabSelection.map(elem => {
 //     });
 //   };
 
-  doSomething.onclick = function(element) {
-   fetch('https://fetchrss.com/rss/5dcbe5c88a93f8336b8b45685dcbe5a58a93f8206b8b4567.xml', {
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', 
-  })
-  .then(console.log)
+  // doSomething.onclick = function(element) {
+  //  fetch('https://fetchrss.com/rss/5dcbe5c88a93f8336b8b45685dcbe5a58a93f8206b8b4567.xml', {
+  //   method: 'GET', // *GET, POST, PUT, DELETE, etc.
+  //   mode: 'cors', 
+  // })
+  // .then(console.log)
   
-  }
+  // }
+
+
+  
+
+});
