@@ -1,0 +1,53 @@
+.main-content {
+    margin: 40px 30% 40px 30%;
+    width: 40%;
+}
+
+.main-content .description-title {
+        font-size: 26px;
+        background-color: rgb(55, 154, 184);
+        color: rgb(255, 255, 255);
+        padding-left: 10px;
+        line-height: 55px;
+        border-radius: 10px;
+        transition: 0.3s;
+        margin-top: 2px;
+        margin-bottom: 2px;
+}
+.main-content .description-title:hover {
+            background-color: rgb(125, 175, 190);
+            cursor: pointer;
+        }
+         
+.main-content .expand-collapse{
+            float: right;
+            margin-right: 8px;
+        }
+.main-content .description {
+        font-size: 18px;
+        color: rgb(53, 53, 63);
+        max-height: 0;
+        overflow: hidden;
+        margin-left: 0px;
+        padding-left: 10px;
+        transition: max-height 0.2s ease-out;
+        
+}
+
+.main-content .description p {
+    margin-top: 4px;
+}
+
+footer {
+    text-align: center;
+    font-size: 20px;
+    bottom: 0px;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-top: 100px;    
+}
+
+footer img {
+    margin-top: 5px;
+    height: 50px;
+}

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.4.0",
+    "bulma-accordion": "^2.0.1",
     "lit-html": "^1.1.2"
   }
 }

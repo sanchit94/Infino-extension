@@ -3,19 +3,34 @@
   <head>
     <link rel="stylesheet" href="bulma.css">
     <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="assets/css/accordion.css" />
     <style>
       #main-container {
         width: 450px;
         height: 500px;
       }
 
-      button.dropdown-trigger {
+      .dropdown-trigger > button {
         background: transparent;
         border: none;
+        height: auto;
+        outline: none;
       }
 
-      button.dropdown-trigger:hover {
+      .dropdown-trigger:hover > button {
         cursor: pointer;
+      }
+
+      .dropdown-trigger > button:focus:not(:active) {
+        box-shadow: none;
+      }
+
+      #login-screen {
+        margin-top: 5em;
+      }
+
+      #submit-button {
+        margin-top: 2em;
       }
 
       .tabs.is-toggle li.is-active a {
@@ -23,8 +38,12 @@
         border-color: hsl(171, 100%, 41%);
       }
 
+      .tabs a, .tabs.is-toggle a {
+        border-width: 0;
+      }
+
       .card-header {
-        padding: 1.5em;
+        padding: 1.5em 1.5em 0.75em 1.75em;
       }
 
       .tabs.is-toggle {
@@ -36,13 +55,20 @@
         color: hsl(171, 100%, 41%);
       }
 
+      .card-header {
+        border-bottom-color: #dbdbdb;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        box-shadow: none;
+      }
+
       .dp-block {
         margin-left: auto;
       }
 
       .card-content {
-        max-height: 400px;
-        padding: 1.5rem 0.25em 0.25em 1.5em;
+        height: 420px;
+        padding: 1.5rem 0.15em 0em 1.5em;
       }
 
       table.table {
@@ -69,6 +95,10 @@
       .is-light {
         background-color: #E7F4FF;
         text-align: center;
+      }
+
+      .has-no-margin {
+        margin: 0;
       }
 
       .text-red {
