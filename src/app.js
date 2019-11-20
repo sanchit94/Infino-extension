@@ -96,40 +96,26 @@ const routeToHome = (e) => {
   render(userView('home'), document.body);
 }
 
-const accordionInit = () => {
-    var accordion = document.querySelectorAll(".description-title");
-
-    console.log(accordion);
-    console.log(accordion[1]);
-    console.log([].slice.call(accordion));
-    
-    
-    
-
-    for (let item of accordion){
-      console.log('Event listener attached');
-      
-        item.addEventListener('click', accordionClick);
-    }
-}
-
 const accordionClick = (event) => {
-    var targetClicked =event.target;
-    var classClicked = targetClicked.classList;
-    while ((classClicked[0] !="description-title")){
+    let targetClicked = event.target;
+    let classClicked = targetClicked.classList;
+    
+    while (![...classClicked].find(elem => elem === "description-title")) {
         targetClicked = targetClicked.parentElement;
         classClicked = targetClicked.classList;
     }
-    var description = targetClicked.nextElementSibling;
-    var expander = targetClicked.children[0];
+
+    let description = targetClicked.nextElementSibling;
+    let expander = targetClicked.children[0];
     if (description.style.maxHeight){
         description.style.maxHeight = null;
         expander.innerHTML = "&#10133;"
         
     }
+
     else {
-        var allDescriptions = document.getElementsByTagName("dd");
-        for (var i = 0; i < allDescriptions.length; i++){
+        let allDescriptions = document.getElementsByTagName("dd");
+        for (let i = 0; i < allDescriptions.length; i++){
             if (allDescriptions[i].style.maxHeight){
                 allDescriptions[i].style.maxHeight = null;
                 allDescriptions[i].previousElementSibling.children[0].innerHTML = "&#10133;"
