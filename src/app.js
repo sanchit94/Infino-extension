@@ -74,6 +74,11 @@ const routeToReward = (e) => {
   
     render(userView('rewards'), document.body);
 
+    $(".custom-scroll").mCustomScrollbar({
+      theme: 'infino',
+      axis: "y"
+    });
+
 }
 
 const loginHandler = () => {
@@ -94,37 +99,6 @@ const routeToHome = (e) => {
 
   homeTab.classList.add('is-active');
   render(userView('home'), document.body);
-}
-
-const accordionClick = (event) => {
-    let targetClicked = event.target;
-    let classClicked = targetClicked.classList;
-    
-    while (![...classClicked].find(elem => elem === "description-title")) {
-        targetClicked = targetClicked.parentElement;
-        classClicked = targetClicked.classList;
-    }
-
-    let description = targetClicked.nextElementSibling;
-    let expander = targetClicked.children[0];
-    if (description.style.maxHeight){
-        description.style.maxHeight = null;
-        expander.innerHTML = "&#10133;"
-        
-    }
-
-    else {
-        let allDescriptions = document.getElementsByTagName("dd");
-        for (let i = 0; i < allDescriptions.length; i++){
-            if (allDescriptions[i].style.maxHeight){
-                allDescriptions[i].style.maxHeight = null;
-                allDescriptions[i].previousElementSibling.children[0].innerHTML = "&#10133;"
-            }
-        }
-        description.style.maxHeight = description.scrollHeight + "px";
-        expander.innerHTML = "&#10134;";
-        
-    }
 }
 
 const loginView = () => html`
@@ -183,7 +157,7 @@ const userView = (currentScreen) => html`
         <div class="dropdown is-right">
         <div @click=${dropDownHandler} class="dropdown-trigger">
           <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-            <img src="assets/images/DP.png" alt="Display Picture" width="48">
+            <img src="assets/images/DP.png" alt="Display Picture" width="40">
           </button>
         </div>
         <div class="dropdown-menu" id="dropdown-menu2" role="menu">
@@ -225,7 +199,7 @@ const homeScreen = () => html`
   <b class="is-size-2">Sanchit Sharma</b>
   <br>
   <br>
-  You have added <b>12</b> finances to Infino.
+  You have added <b class="is-size-2">12</b> finances to Infino.
 </div>
 
 </div>
@@ -441,20 +415,167 @@ const rewardScreen = () => html`
 
 `;
 
+const accordionClick = (event) => {
+  let targetClicked = event.target;
+  let classClicked = targetClicked.classList;
+  
+  while (![...classClicked].find(elem => elem === "description-title")) {
+      targetClicked = targetClicked.parentElement;
+      classClicked = targetClicked.classList;
+  }
+
+  let description = targetClicked.nextElementSibling;
+  // let expander = targetClicked.children[0];
+  if (description.style.maxHeight){
+      description.style.maxHeight = null;
+      // expander.innerHTML = "&#10133;"
+      
+  }
+
+  else {
+      let allDescriptions = document.getElementsByTagName("dd");
+      for (let i = 0; i < allDescriptions.length; i++){
+          if (allDescriptions[i].style.maxHeight){
+              allDescriptions[i].style.maxHeight = null;
+              allDescriptions[i].previousElementSibling.children[0].innerHTML = "&#10133;"
+          }
+      }
+      description.style.maxHeight = description.scrollHeight + "px";
+      // expander.innerHTML = "&#10134;";
+      
+  }
+}
+
 const altView = () => html`
-<div class="main-content">
-<dt @click=${accordionClick} class="description-title">Dragon <span class="expand-collapse">&#10133;</span></dt>
-<dd class="description">This is quite obviously the best of all the creatures. My one true love.
-<p> Examples include Smaug (The Hobbit), Tintaglia (The Liveship Traders) and Spyro (Spyro video games).</p></dd>
-<dt @click=${accordionClick} class="description-title">Mermaid<span class="expand-collapse">&#10133;</span></dt>
-<dd class="description">Mermaids in stories are either super cute or super scary. They're popular in YA at the moment.
-<p>Examples include Ariel (The Little Mermaid), Sh'eenaz (The Witcher).</p></dd>
-<dt @click=${accordionClick} class="description-title">Siren<span class="expand-collapse">&#10133;</span></dt>
-<dd class="description">Sirens are not the same as mermaids. They are totally badass and lure men to their deaths.
-<p> Sirens don't usually get names.... sad face.</p></dd>
-<dt @click=${accordionClick} class="description-title">Pegasus<span class="expand-collapse">&#10133;</span></dt>
-<dd class="description">Better than a horse.
-<p>I think these appear in Greek mythology?</p></dd>
+<div class="main-screen" id="reward-screen">
+  <div class="box">
+    <div class="columns is-mobile description-title">
+      <div class="column is-2">
+        <div class="bank-image is-red">
+        <img src="assets/images/Axis-Bank-PNG-Icon-715x715@3x.png" alt="Bank Name" width="20">
+        </div>
+      </div>
+      <div class="column is-4 push-left-1">
+        <span class="bank-name">Axis Bank</span>
+        <br>
+        <span class="card-number-masked has-text-grey-light">********594</span>
+      </div>
+      <div class="column is-3">
+        <span class="card-issuer">VISA</span>
+        <br>
+        <span class="card-type has-text-grey-light">Credit</span>
+      </div>
+      <div class="column is-3">
+        <span class="savings-amount">&#8377; 2,500</span>
+        <br>
+        <span class="has-text-grey-light is-size-7">Est. Reward</span>
+      </div>
+      <div class="column is-2">
+        <span @click=${accordionClick}><i class="fas fa-info"></i></span>
+      </div>
+    </div>
+    <div class="description">
+    Product price: 250 <br>
+    INRRewards: HDFC 3% <br>
+    cashbackTotal Savings: 30 INR
+    </div>
+  </div>
+  <div class="box">
+    <div class="columns is-mobile description-title">
+      <div class="column is-2">
+      <div class="bank-image is-red">
+      <img src="assets/images/HDFC.png" alt="Bank Name" width="20">
+      </div>
+      </div>
+      <div class="column is-4 push-left-1">
+        <span class="bank-name">HDFC Bank</span>
+        <br>
+        <span class="card-number-masked has-text-grey-light">********594</span>
+      </div>
+      <div class="column is-3">
+        <span class="card-issuer">VISA</span>
+        <br>
+        <span class="card-type has-text-grey-light">Credit</span>
+      </div>
+      <div class="column is-3">
+        <span class="savings-amount">&#8377; 2,500</span>
+        <br>
+        <span class="has-text-grey-light is-size-7">Est. Reward</span>
+      </div>
+      <div class="column is-2">
+      <span @click=${accordionClick}><i class="fas fa-info"></i></span>
+      </div>
+    </div>
+    <div class="description">
+    Product price: 250 <br>
+    INRRewards: HDFC 3% <br>
+    cashbackTotal Savings: 30 INR
+    </div>
+  </div>
+  <div class="box">
+    <div class="columns is-mobile description-title">
+      <div class="column is-2">
+        <div class="bank-image is-red">
+        <img src="assets/images/Axis-Bank-PNG-Icon-715x715@3x.png" alt="Bank Name" width="20">
+        </div>
+      </div>
+      <div class="column is-4 push-left-1">
+        <span class="bank-name">Axis Bank</span>
+        <br>
+        <span class="card-number-masked has-text-grey-light">********594</span>
+      </div>
+      <div class="column is-3">
+        <span class="card-issuer">VISA</span>
+        <br>
+        <span class="card-type has-text-grey-light">Credit</span>
+      </div>
+      <div class="column is-3">
+        <span class="savings-amount">&#8377; 2,500</span>
+        <br>
+        <span class="has-text-grey-light is-size-7">Est. Reward</span>
+      </div>
+      <div class="column is-2">
+      <span @click=${accordionClick}><i class="fas fa-info"></i></span>
+      </div>
+    </div>
+    <div class="description">
+    Product price: 250 <br>
+    INRRewards: HDFC 3% <br>
+    cashbackTotal Savings: 30 INR
+    </div>
+  </div>
+  <div class="box">
+    <div class="columns is-mobile description-title">
+      <div class="column is-2">
+      <div class="bank-image is-red">
+      <img src="assets/images/HDFC.png" alt="Bank Name" width="20">
+    </div>
+      </div>
+      <div class="column is-4 push-left-1">
+        <span class="bank-name">HDFC Bank</span>
+        <br>
+        <span class="card-number-masked has-text-grey-light">********594</span>
+      </div>
+      <div class="column is-3">
+        <span class="card-issuer">VISA</span>
+        <br>
+        <span class="card-type has-text-grey-light">Credit</span>
+      </div>
+      <div class="column is-3">
+        <span class="savings-amount">&#8377; 2,500</span>
+        <br>
+        <span class="has-text-grey-light is-size-7">Est. Reward</span>
+      </div>
+      <div class="column is-2">
+      <span @click=${accordionClick}><i class="fas fa-info"></i></span>
+      </div>
+    </div>
+    <div class="description">
+    Product price: 250 <br>
+    INRRewards: HDFC 3% <br>
+    cashbackTotal Savings: 30 INR
+    </div>
+  </div>
 </div>
 `;
 
